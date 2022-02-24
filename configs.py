@@ -24,28 +24,31 @@ config = {
    #"RIGHT_led": 0,
 
    # Buttons
-   # You can set NeoPixel LED index number with "~_led" parameter :
+   #   Y-X-L-
+   #   B-A-R-
+   # NeoPixels
    #   5-4-3-
    #   0-1-2-
+   #You can set NeoPixel LED index number with "~_led" parameter :
    # comment out anything if you don't need
    # 사용할 버튼 항목만 주석 삭제 후 설정
    # LED가 있을시 "버튼_led"값으로 번호 설정, 없을시 주석처리하거나 생략
    "A":board.D25,
-   "A_led": 0,
+   "A_led": 1,
    "B":board.D24,
-   "B_led": 1,
+   "B_led": 0,
    "X":board.D15,
-   "X_led": 5,
+   "X_led": 4,
    "Y":board.D18,
-   "Y_led": 4,
+   "Y_led": 5,
    "TL":board.D14,
    "TL_led": 3,
    "TR":board.D23,
    "TR_led": 2,
    "START":board.D10,
-   #"START_led": 6,
+   #"START_led": 7,
    "SELECT":board.D9,
-   #"SELECT_led": 7,
+   #"SELECT_led": 6,
  
    # NeoPixel - WS2812 : D10, D12, D18, D21(recommend) pin only 
    # 네오픽셀 ws2812b 핀 설정
