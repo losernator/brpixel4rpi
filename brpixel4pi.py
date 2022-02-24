@@ -1,11 +1,11 @@
-# Copyright 2021 raspigamer
+﻿# Copyright 2022 raspigamer
 # License-Identifier: MIT
 # install:
 # sudo python3 -m pip install --force-reinstall adafruit-blinka
 # sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 # 
-# 
-#
+# run:
+# sudo python3 /home/pi/brpixel4rpi/brpixel4pi.py &
 import time
 import os
 import board
@@ -19,17 +19,6 @@ except ImportError:
     except ImportError:
         from adafruit_pypixelbuf import colorwheel
 from configs import config
-
-# 컬러프리셋
-RED = (255,  0,  0)
-YELLOW = (255, 150, 0)
-GREEN = (0, 255, 0)
-CYAN = (0, 255, 255)
-BLUE = (0, 0, 255)
-PURPLE = (180, 0, 255)
-GREY = (30, 30, 30)
-WHITE = (128, 128, 128) #고급 네오픽셀에서만 사용
-
 
 # 버튼 핀 설정, LED순서
 # mk_arcade_joystick_rpi기준 A:D25,B:D24,X:D15,Y:D18,TL:D14,TR:D23,start:D10,select:D9
@@ -58,9 +47,7 @@ for dpad in dpads:
     dpad.direction = digitalio.Direction.INPUT
     dpad.pull = digitalio.Pull.UP
 
-
 #NeoPixel
-button_leds = []
 if config.get('neopixel_pin'):
     default_color = config.get('default_color')
     led_color = config.get('led_color')
@@ -82,7 +69,7 @@ def rainbow(speed):
     while True:
         for j in range(255):
             for i in range(num_pixels):
-                pixel_index = (i * 256 // num_pixels) + j
+                pixel_index = (i * 256 // num_pixels) + j*10
                 pixels[i] = colorwheel(pixel_index & 255)
             for i, button in enumerate(buttons):
                 if not button.value:
@@ -127,7 +114,7 @@ current_time = time.monotonic()
 while True:
     if Neopixel:
         if time.monotonic() - current_time > activetime:
-            rainbow(0.005)
+            rainbow(0.05)
     # Button pressed value = False
     for i, button in enumerate(buttons):
         if not button.value:
@@ -148,4 +135,4 @@ while True:
                 pixelfading(dpad_leds[i])
     if Neopixel:
         pixels.show()
-    time.sleep(0.02)
+    time.sleep(0.03)

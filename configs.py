@@ -1,4 +1,4 @@
-import board
+﻿import board
 # color preset
 RED = (255,  0,  0)
 YELLOW = (255, 150, 0)
@@ -16,11 +16,11 @@ config = {
    # 방향키 핀 및 LED 번호(순서)지정
    "UP":board.D4,
    #"UP_led": 0,
-   "DOWN":board.D22,
+   "DOWN":board.D17,
    #"DOWN_led": 0,
-   "LEFT":board.D17,
+   "LEFT":board.D27,
    #"LEFT_led": 0,
-   "RIGHT":board.D27,
+   "RIGHT":board.D22,
    #"RIGHT_led": 0,
 
    # Buttons
@@ -39,7 +39,7 @@ config = {
    "Y":board.D18,
    "Y_led": 4,
    "TL":board.D14,
-   "TR_led": 3,
+   "TL_led": 3,
    "TR":board.D23,
    "TR_led": 2,
    "START":board.D10,
@@ -60,7 +60,7 @@ config = {
    # LED 밝기 1이 최대
    "led_brightness": 1, # 1 is maximum value
    # 버튼 디밍 단계 (0~255), 높을수록 빨리 꺼짐
-   "fadingstep" : 10, # Dimming speed - higher, faster
+   "fadingstep" : 50, # Dimming speed - higher, faster
    # 대기모드 진입 시간 (초)
    "activetime" : 5, # Standby mode entry time(sec)
 
