@@ -57,7 +57,7 @@ config = {
    # RED, YELLOW, GREEN, CYAN, BLUE, PURPLE, GREY, WHITE
    # RGB LED Color, must set as many as LED lights you have
    # 버튼 별 기본 색상 설정 *LED 개수 만큼 지정할 것
-   "led_color": [GREEN, RED, CYAN, CYAN, YELLOW, BLUE ],
+   "led_color": [CYAN, CYAN, CYAN, CYAN, CYAN, CYAN ],
    # Default color for buttons with no assigned color
    "default_color":GREY,
    # LED 밝기 1이 최대
