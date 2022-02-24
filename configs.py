@@ -47,9 +47,9 @@ config = {
    "SELECT":board.D9,
    #"SELECT_led": 7,
  
-   # NeoPixel - WS2812 : D10, D12, D18, D21 pin only
+   # NeoPixel - WS2812 : D10, D12, D18, D21(recommend) pin only 
    # 네오픽셀 ws2812b 핀 설정
-   # D10, D12, D18, D21만 가능
+   # D10, D12, D18, D21만 가능 (D21 추천)
    "neopixel_pin": board.D21,
    # RED, YELLOW, GREEN, CYAN, BLUE, PURPLE, GREY, WHITE
    # RGB LED Color, must set as many as LED lights you have
@@ -63,11 +63,4 @@ config = {
    "fadingstep" : 50, # Dimming speed - higher, faster
    # 대기모드 진입 시간 (초)
    "activetime" : 5, # Standby mode entry time(sec)
-
-   # joystick mode - 'axis' or 'hat'
-   # 조이스틱 모드 설정 'axis' 또는 'hat'
-   "dpad_mode": "hat",
-   # Turbo button speed (sec)
-   "turbo_speed": 0.04,
-
 }
