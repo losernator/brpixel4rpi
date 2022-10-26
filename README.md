@@ -20,7 +20,7 @@ cd /home/pi
 git clone https://github.com/losernator/brpixel4rpi.git
 ```
 Add this to first line of /opt/retropie/configs/all/autostart.sh  
-`sudo python3 /home/pi/brpixel4rpi/brpixel4pi.py &`
+`sudo python3 /home/pi/brpixel4rpi/brpixel4pi.py&`
 
 ### Options:
 - Edit 'configs.py' for custom setup
